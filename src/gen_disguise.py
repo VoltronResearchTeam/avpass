@@ -72,7 +72,7 @@ def obfuscation_with_rules(lists, apkname):
 def extract_smali(target, output):
     if not os.path.exists(target):
         print "[*] Decoding apk file to smali"
-        os.system('apktool d '+target+' -o' + output)
+        os.system('apktool d ./'+target+'.apk -o' + output)
 
 def build_apk(target, filename, postfix = ""):
     if postfix is not "":
