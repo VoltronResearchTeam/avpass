@@ -223,7 +223,7 @@ if __name__ == "__main__":
             shutil.rmtree(working_dir)
 
         print "Extracting smali files..."
-        extract_smali(infile, TEMP_DIR)
+        extract_smali(apkname, TEMP_DIR)
 
         # execute obfuscation
         print "Executing obfuscation..."
