@@ -42,8 +42,8 @@ def remove_dot_from_filename(filename):
         last_segment = last_segment.split('.')[0]
     
     # Reassemble the full path with the modified final segment
-    path_segments[-1] = last_segment
-    output = '/'.join(path_segments)
+    # path_segments[-1] = last_segment
+    # output = '/'.join(path_segments)
     
     print output
     return output
