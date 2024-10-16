@@ -45,7 +45,7 @@ def remove_dot_from_filename(filename):
     # path_segments[-1] = last_segment
     output = last_segment
     
-    print output
+    print "Filename: %s" % output
     return output
 
 def ret_command(variable, apkname):
