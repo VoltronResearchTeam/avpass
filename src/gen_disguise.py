@@ -215,18 +215,24 @@ if __name__ == "__main__":
         else:
             outfile = args.outfile
 
+        print "Input file: %s" % infile
         # prepare smali and its directory
         apkname = remove_dot_from_filename(infile)
         working_dir = TEMP_DIR
         if os.path.exists(working_dir):
             shutil.rmtree(working_dir)
+
+        print "Extracting smali files..."
         extract_smali(infile, TEMP_DIR)
 
         # execute obfuscation
+        print "Executing obfuscation..."
         execute_selected_obfuscation(working_dir)    
         
+        print "Building APK..."
         # make APK and remove working directory
         build_apk(working_dir, outfile)
+        
         if os.path.exists(working_dir):
             shutil.rmtree(working_dir)
 
