@@ -44,7 +44,7 @@ while IFS=, read -r folder_path package_name; do
 done < <(tail -n +2 "$input_csv")  # Skips the header row if present
 
 # Run copy commands in parallel
-cat "$copy_commands" | parallel -j "$number_of_jobs"
+# cat "$copy_commands" | parallel -j "$number_of_jobs"
 
 # Run gen_disguise.py commands in parallel
 cat "$process_commands" | parallel -j "$number_of_jobs"

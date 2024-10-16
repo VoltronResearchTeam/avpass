@@ -31,21 +31,19 @@ DEFAULT_RULE_FILE = "inferred_rules.pkl"
 # case 3: xxx.apk
 
 def remove_dot_from_filename(filename):
-    """Remove dot from the file name, ignoring any dots in folder names."""
+    """Remove the final extension from the file name, ignoring any dots in folder names or filename itself."""
     # Split filename to separate the path and the final segment
     path_segments = filename.split('/')
     # Get the last segment (assumed to be the file name with an extension)
     last_segment = path_segments[-1]
     
-    # Remove the extension if there's a dot in the final segment
+    # Remove only the last extension after the final dot
     if '.' in last_segment:
-        last_segment = last_segment.split('.')[0]
+        last_segment = '.'.join(last_segment.split('.')[:-1])
     
-    # Reassemble the full path with the modified final segment
-    # path_segments[-1] = last_segment
+    # Reassemble the filename without the final extension
     output = last_segment
-    
-    print "Filename: %s" % output
+    print("Filename:", output)
     return output
 
 def ret_command(variable, apkname):
