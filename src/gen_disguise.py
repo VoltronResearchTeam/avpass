@@ -213,6 +213,8 @@ if __name__ == "__main__":
         else:
             outfile = args.outfile
 
+        TEMP_DIR = remove_dot_from_filename(infile) + "_temp_obfus"
+
         print "Input file: %s" % infile
         # prepare smali and its directory
         apkname = remove_dot_from_filename(infile)
